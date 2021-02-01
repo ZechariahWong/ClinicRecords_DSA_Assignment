@@ -1,0 +1,6 @@
+﻿  main.cpp
+E:\year 3\DSA\ClinicRecords_DSA_Assignment\ClinicRecords_DSA_Assignment\main.cpp(5,70): warning C4305: 'argument': truncation from 'double' to 'float'
+E:\year 3\DSA\ClinicRecords_DSA_Assignment\ClinicRecords_DSA_Assignment\main.cpp(18,14): warning C4326: return type of 'main' should be 'int' instead of 'void'
+  patient.cpp
+  Generating Code...
+  ClinicRecords_DSA_Assignment.vcxproj -> E:\year 3\DSA\ClinicRecords_DSA_Assignment\Debug\ClinicRecords_DSA_Assignment.exe
