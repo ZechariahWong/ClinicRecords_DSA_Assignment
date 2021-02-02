@@ -16,6 +16,7 @@ public:
 	// Constructor
 	// getLength()
 	// isEmpty()
+	medicineList();
 	
 	// Getting by Medicine index no
 	Medicine get(int index);

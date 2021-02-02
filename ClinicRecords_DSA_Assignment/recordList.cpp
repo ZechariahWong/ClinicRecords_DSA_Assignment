@@ -1,6 +1,6 @@
 #include "recordList.h"
 
-//recordList::recordList () { size = 0; };
+recordList::recordList() { size = 0; firstNode = NULL; };
 
 bool recordList::add(Record item)
 {

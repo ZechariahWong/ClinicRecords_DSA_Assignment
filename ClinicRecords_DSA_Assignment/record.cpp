@@ -1,6 +1,7 @@
 #include "record.h"
 
 Record::Record () {};
+
 Record::Record (string id, string note, medicineList meds) {
 	recordID = id;
 	doctorNotes = note;

@@ -18,6 +18,7 @@ public:
 	// Constructor
 	// getLength()
 	// isEmpty()
+	recordList();
 
 	// Getting by Medicine index no
 	Record get(int index);
