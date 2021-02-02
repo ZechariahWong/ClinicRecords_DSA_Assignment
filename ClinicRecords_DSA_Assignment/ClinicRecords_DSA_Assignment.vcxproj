@@ -142,17 +142,15 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="medicine.cpp" />
     <ClCompile Include="medicineList.cpp" />
-    <ClCompile Include="medicineStack.cpp" />
     <ClCompile Include="patient.cpp" />
-    <ClCompile Include="patientRecord.cpp" />
+    <ClCompile Include="record.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abstractList.h" />
     <ClInclude Include="medicine.h" />
-    <ClInclude Include="medicineStack.h" />
     <ClInclude Include="medicineList.h" />
     <ClInclude Include="patient.h" />
-    <ClInclude Include="patientRecord.h" />
+    <ClInclude Include="record.h" />
     <ClInclude Include="recordList.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

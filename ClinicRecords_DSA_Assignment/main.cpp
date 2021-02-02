@@ -5,8 +5,8 @@
 Medicine* panadol = new Medicine ("Panadol", "For pain", 3.5);
 Medicine* coughSyr = new Medicine ("Cough Syrup", "For coughs", 0.9);
 Medicine* Strepsils = new Medicine ("Strepsils", "For sorethroats", 2.5);
-Patient* zech = new Patient ("Zech", "+65 1234 5678", "TXXXXXXXA");
-recordList* medicineCollection = new recordList();
+Patient zech = Patient ("Zech", "+65 1234 5678", "TXXXXXXXA");
+medicineList* medicineCollection = new medicineList();
 
 int main () {
 	medicineCollection->add (*panadol);
@@ -20,6 +20,7 @@ int main () {
 	medicineCollection->remove (1);
 	cout << endl;
 	medicineCollection->print ();
+	cout<<medicineCollection->getLength ()<<endl;
 	//mainStack->displayInOrder ();
 	return 0;
 }

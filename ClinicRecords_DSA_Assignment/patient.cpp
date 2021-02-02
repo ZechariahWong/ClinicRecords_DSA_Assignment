@@ -11,6 +11,6 @@ string Patient::getName () { return name; };
 string Patient::getPhoneNo () { return phoneNo; };
 string Patient::getNRIC () { return NRIC; };
 
-//patientRecord Patient::getRecord (string id) {
+//record Patient::getRecord (string id) {
 //
 //};

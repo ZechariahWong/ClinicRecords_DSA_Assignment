@@ -1,11 +1,11 @@
-#include "patientRecord.h"
+#include "record.h"
 
 class Patient {
 private:
 	string name;
 	string phoneNo;
 	string NRIC;
-	list<patientRecord> records;
+	//list<record> records;
 public:
 	Patient ();
 	Patient (string n, string hp, string nric);
@@ -13,5 +13,5 @@ public:
 	string getName();
 	string getPhoneNo();
 	string getNRIC();
-	patientRecord getRecord (string id);
+	//record getRecord (string id);
 };

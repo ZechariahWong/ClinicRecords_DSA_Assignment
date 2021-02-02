@@ -1,8 +1,9 @@
 #pragma once
-//#include "abstractList.h"
-#include "medicineList.h"
+#include "abstractList.h"
+#include "record.h"
+//#include "medicineList.h"
 
-class recordList : public medicineList {
+class recordList : public  abstractList{
 protected:
 public:
 
