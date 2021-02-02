@@ -5,7 +5,7 @@ medicineStack::~medicineStack () {};
 
 
 bool medicineStack::push (Medicine item) {
-	cout << "Push" << endl;
+	//cout << "Push" << endl;
 	Node* newNode = new Node ();
 	newNode->item = item;
 	newNode->next = topNode;
@@ -14,7 +14,7 @@ bool medicineStack::push (Medicine item) {
 };
 
 bool medicineStack::pop () {
-	cout << "Pop" << endl;
+	//cout << "Pop" << endl;
 	if (!isEmpty ()) {
 		Node* tempNode = new Node ();
 		tempNode = topNode->next;

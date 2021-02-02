@@ -30,6 +30,12 @@
     <ClCompile Include="patient.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="medicineList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="abstractList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="medicine.h">
@@ -42,6 +48,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="medicineStack.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="medicineList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="abstractList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="recordList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

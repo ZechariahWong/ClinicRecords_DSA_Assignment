@@ -13,4 +13,5 @@ public:
 	string getName();
 	string getPhoneNo();
 	string getNRIC();
+	patientRecord getRecord (string id);
 };

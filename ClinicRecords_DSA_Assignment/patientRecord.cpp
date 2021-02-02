@@ -1,7 +1,7 @@
 #include "patientRecord.h"
 
 patientRecord::patientRecord () {}
-patientRecord::patientRecord (string id, string note, medicineStack meds) {
+patientRecord::patientRecord (string id, string note, medicineList meds) {
 	recordID = id;
 	doctorNotes = note;
 	//amtPayable = getAmtPayable ();

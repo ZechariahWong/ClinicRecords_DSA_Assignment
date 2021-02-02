@@ -1,4 +1,4 @@
-#include "medicineStack.h"
+#include "medicineList.h"
 #include <list>
 
 class patientRecord {
@@ -6,10 +6,10 @@ private:
 	string recordID;
 	string doctorNotes;			// This will just be some comments for the doctor to put in
 	float amtPayable = 0;			// This will be the sum of the medicine price from medsGiven
-	medicineStack medsGiven;
+	medicineList medsGiven;
 public:
 	patientRecord();
-	patientRecord (string id, string note, medicineStack meds);
+	patientRecord (string id, string note, medicineList meds);
 	string	getRecordID () ;
 	string	getDoctorNotes () ;
 	//float	getAmtPayable () ;
