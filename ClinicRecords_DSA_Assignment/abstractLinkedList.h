@@ -5,24 +5,25 @@
 
 using namespace std;
 
-class abstractList {
+class abstractLinkedList {
 protected:
 	struct Node
 	{
 		Node* next;							// pointer pointing to next item
 	};
-	Node* firstNode;	
+	Node* firstNode;
+
 	int size;								// number of items in the list
 public:
-	abstractList () { size = 0; };
+	abstractLinkedList() { size = 0; firstNode = NULL; };
 
-	
-	bool isEmpty ();						// Empty = True 
-	int getLength ();						// getLength starts from 0
+
+	bool isEmpty();						// Empty = True 
+	int getLength();						// getLength starts from 0
 
 	// pure virtual functions: These functions will always be overwritten
-	virtual void print () = 0;
-	virtual bool remove (int index) = 0;
+	virtual void print() = 0;
+	virtual bool remove(int index) = 0;
 
 	// for some reason this generates an error of the program trying to instantiate an abstract class
 	// I think cause theres technically no "bool add(int index)" anywhere
