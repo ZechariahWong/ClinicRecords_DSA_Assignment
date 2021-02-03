@@ -4,6 +4,7 @@
 
 #include "patientBinaryNode.h"
 #include "AVL_Tree.h"
+#include "patientList.h"
 
 class PatientDB_BST
 {
@@ -12,6 +13,7 @@ private:
 
 public:
 	PatientDB_BST();
+	patientList searchResults; //for the purpose of search results, also accessible from database
 
 	//search
 	PatientBinaryNode* search(Patient target);
@@ -53,4 +55,12 @@ public:
 	bool isBalanced(PatientBinaryNode* t);
 
 	void display();
+	//void filteredDisplay(string s);
+
+	//PatientBinaryNode* resultSearch(Patient target);
+	//PatientBinaryNode* resultSearch(PatientBinaryNode* t, Patient target);
+	void resultSearch(string name);
+	void resultSearch(PatientBinaryNode* t, string name);
+	void displaySearchResults();
+	string decapitalizer(char s); //helper function to convert string to lowercase;
 };

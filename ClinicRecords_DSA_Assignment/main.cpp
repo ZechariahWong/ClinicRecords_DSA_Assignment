@@ -9,6 +9,7 @@ Medicine coughSyr = Medicine("Cough Syrup", "For coughs", 0.9);
 Medicine Strepsils = Medicine("Strepsils", "For sorethroats", 2.5);
 
 PatientDB_BST database = PatientDB_BST();
+//ClinicQueue cQueue = ClinicQueue();
 
 Patient zech = Patient("Zech", "+65 1234 5678", "TXXXXXXXA");
 medicineList medicineCollection = medicineList();
@@ -53,20 +54,36 @@ void addApptInfo()
 	//to-do
 }
 
+void searchPatient()
+{
+	string name;
+	cout << "Insert Patient's Name: " << endl;
+	cin >> name;
+
+	database.resultSearch(name);
+
+	cout << "Possible patient(s):" << endl;
+	database.displaySearchResults();
+}
+
 void issueQueueNo()
 {
-	//to-do
+	searchPatient();
+	int patientChoice;
+	cout << "Select result (1 being the topmost patient): ";
+	cin >> patientChoice;
+
+	Patient pContext = database.searchResults.get(patientChoice - 1);
+	cout << pContext.getName() << " selected." << endl; // for debugging
+
+	//pContext.setQueueNo(someRandomUnusedNumber);
+	//cQueue.push(someRandomUnusedNumber);
 }
 
 void viewAllPatients()
 {
 	database.display();
-	std::cout << std::endl;
-}
-
-void searchPatient()
-{
-	//to-do
+	cout << endl;
 }
 
 void menuChoice()
@@ -105,6 +122,7 @@ void menuChoice()
 			cout << "Invalid choice, please select a valid choice." << endl;
 			break;
 		}
+		menuDisplay();
 	}
 }
 

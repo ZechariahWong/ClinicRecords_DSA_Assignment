@@ -247,3 +247,32 @@ void PatientDB_BST::display()
 {
 	inorder();
 }
+
+void PatientDB_BST::resultSearch(string name)
+{
+	if (!searchResults.isEmpty()) // to clear previous search results
+	{
+		searchResults.clear();
+	}
+
+	if (isEmpty())
+		std::cout << "No patient found" << std::endl;
+	else
+		resultSearch(root, name);
+}
+
+void PatientDB_BST::resultSearch(PatientBinaryNode* t, string name)
+{
+	if (t != NULL)
+	{
+		resultSearch(t->left, name);
+		if (t->item.getName().find(name) != string::npos)
+			searchResults.add(t->item);
+		resultSearch(t->right, name);
+	}
+}
+
+void PatientDB_BST::displaySearchResults()
+{
+	searchResults.print();
+}
