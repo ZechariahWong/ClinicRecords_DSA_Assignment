@@ -1,4 +1,5 @@
 //#include "record.h"
+#pragma once
 #include "recordList.h"
 
 class Patient {
