@@ -16,5 +16,29 @@ int main () {
 	medicineCollection.add(Strepsils);
 	Record myRec = Record("1", "Patient is alive and well", medicineCollection);
 	zech.addRecord(myRec);
+
+	cout << "DSA Clinic Medical Appointment System" << endl << "==============================================" << endl;
+
+	while (true)
+	{
+		int option;
+		cout << "1. View upcoming appointments" 
+			<< "\n2. Make new appointment" ;
+		cout << "\nInput an option: ";
+
+		if (!(cin >> option))
+		{
+			cout << "Input a number from x-y!" << endl;
+			cin.clear ();
+			cin.ignore ('\n');
+			//while (!(cin >> option)) {
+			//}
+		}
+		else if (option == 0)
+			return false;
+		else {
+			cout << "nice" << endl;
+		}
+	}
 	return 0;
 }
