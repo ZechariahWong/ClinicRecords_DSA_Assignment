@@ -138,7 +138,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="abstractList.cpp" />
+    <ClCompile Include="abstractLinkedList.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="medicine.cpp" />
     <ClCompile Include="medicineList.cpp" />
@@ -147,7 +147,7 @@
     <ClCompile Include="recordList.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="abstractList.h" />
+    <ClInclude Include="abstractLinkedList.h" />
     <ClInclude Include="medicine.h" />
     <ClInclude Include="medicineList.h" />
     <ClInclude Include="patient.h" />

@@ -5,7 +5,7 @@
 
 using namespace std;
 
-class abstractList {
+class abstractLinkedList {
 protected:
 	struct Node
 	{
@@ -14,7 +14,7 @@ protected:
 	Node* firstNode;	
 	int size;								// number of items in the list
 public:
-	abstractList () { size = 0; };
+	abstractLinkedList () { size = 0; };
 
 	
 	bool isEmpty ();						// Empty = True 

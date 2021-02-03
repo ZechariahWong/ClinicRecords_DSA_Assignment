@@ -27,13 +27,13 @@
     <ClCompile Include="medicineList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="abstractList.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="record.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="recordList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="abstractLinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -47,13 +47,13 @@
     <ClInclude Include="medicineList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="abstractList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="recordList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="record.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="abstractLinkedList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

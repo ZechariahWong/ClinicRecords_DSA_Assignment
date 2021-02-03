@@ -1,7 +1,7 @@
 #pragma once
-#include "abstractList.h"
+#include "abstractLinkedList.h"
 
-bool abstractList::isEmpty ()
+bool abstractLinkedList::isEmpty ()
 {
 	if (size == 0) {
 		//cout << "empty" << endl;
@@ -14,4 +14,4 @@ bool abstractList::isEmpty ()
 	}	
 }
 
-int abstractList::getLength () { return size; };
+int abstractLinkedList::getLength () { return size; };

@@ -1,7 +1,7 @@
 #pragma once
 #include "medicine.h"
-#include "abstractList.h"
-class medicineList : public abstractList {
+#include "abstractLinkedList.h"
+class medicineList : public abstractLinkedList {
 private:
 	struct medNode: Node
 	{
@@ -10,7 +10,7 @@ private:
 	};
 	medNode* firstNode;		// point to the first item
 public:
-	// Inherited functions taken feom abstractList
+	// Inherited functions taken feom abstractLinkedList
 	// Constructor
 	// getLength()
 	// isEmpty()
