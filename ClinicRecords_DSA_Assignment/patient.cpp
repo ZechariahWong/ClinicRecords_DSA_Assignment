@@ -17,5 +17,5 @@ recordList Patient::getRecordList() { return records; }
 void Patient::addRecord(Record r)
 {
 	records.add(r);
-	cout << "A new record is added into your records list." << endl;
+	cout << "A new record has been added into your records list." << endl;
 }

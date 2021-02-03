@@ -125,10 +125,15 @@ Record recordList::get(int index)
 void recordList::print()
 {
 	recNode* currentNode = firstNode;
+	cout << "================" << endl;
 	for (int i = 0; i <= size - 1; i++)
 	{
-		cout << currentNode->item.getRecordID() << endl;
+		cout << "Record ID: " << currentNode->item.getRecordID () << endl
+			<< "Doctor's notes: " << currentNode->item.getDoctorNotes () << endl
+			<< "Medicine issued: ";
+		currentNode->item.getMedsGiven ().print();
 		currentNode = currentNode->next;
 	}
-	cout << "end" << endl;
+	cout << "================" << endl;
+	//cout << "end" << endl;
 }

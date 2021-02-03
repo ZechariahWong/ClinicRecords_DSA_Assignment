@@ -8,7 +8,7 @@ Record::Record (string id, string note, medicineList meds) {
 	medsGiven = meds;
 };
 
-int Record::getRecordID () { return recordID; };
+string Record::getRecordID () { return recordID; };
 string Record::getDoctorNotes () { return doctorNotes; };
 medicineList Record::getMedsGiven () { return medsGiven; };
 float Record::getBill () { return amtPayable; };

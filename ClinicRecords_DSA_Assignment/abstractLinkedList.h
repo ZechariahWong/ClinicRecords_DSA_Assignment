@@ -13,7 +13,6 @@ protected:
 	};
 
 	Node* firstNode;
-
 	int size;								// number of items in the list
 public:
 	abstractLinkedList() { size = 0; firstNode = NULL; };
@@ -25,18 +24,5 @@ public:
 	// pure virtual functions: These functions will always be overwritten
 	virtual void print() = 0;
 	virtual bool remove(int index) = 0;
-=======
-	Node* firstNode;	
-	int size;								// number of items in the list
-public:
-	abstractLinkedList () { size = 0; };
-
-	
-	bool isEmpty ();						// Empty = True 
-	int getLength ();						// getLength starts from 0
-
-	// pure virtual functions: These functions will always be overwritten
-	virtual void print () = 0;
-	virtual bool remove (int index) = 0;	
 
 };

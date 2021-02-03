@@ -12,7 +12,6 @@ protected:
 	};
 
 	recNode* firstNode;		// point to the first item
-
 public:
 	// Inherited functions taken feom abstractList
 	// Constructor

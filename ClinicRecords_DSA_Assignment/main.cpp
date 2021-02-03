@@ -15,16 +15,18 @@ int main () {
 	medicineCollection.add(coughSyr);
 	medicineCollection.add(Strepsils);
 	Record myRec = Record("1", "Patient is alive and well", medicineCollection);
-	//medicineCollection->print();
-
 	zech.addRecord(myRec);
-	zech.getRecordList().print();
-	cout << "Medicine list index 1: " << zech.getRecordList().get(0).getMedsGiven().get(1).getName() << endl; //works now
-	cout << endl;
-	cout << medicineCollection.isEmpty();
-	medicineCollection.remove(1);
-	cout << endl;
-	medicineCollection.print();
-	cout << medicineCollection.getLength() << endl;
+
+
+	while (true)
+	{
+		int option;
+		cout << "1. View upcoming appointments" << endl
+			<< "2. Make new appointment" << endl;
+		cout << "Input an option: ";
+		cin >> option; 
+		if (option == 0)
+			return false;
+	}
 	return 0;
 }
