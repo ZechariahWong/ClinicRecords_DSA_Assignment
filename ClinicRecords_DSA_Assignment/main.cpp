@@ -1,7 +1,7 @@
+#pragma once
 #include <string>
 #include "patient.h"
 #include "recordList.h"
-
 
 Medicine panadol = Medicine("Panadol", "For pain", 3.5);
 Medicine coughSyr = Medicine("Cough Syrup", "For coughs", 0.9);
@@ -19,14 +19,6 @@ int main () {
 
 	zech.addRecord(myRec);
 	zech.getRecordList().print();
-	//zech.getRecordList()->get(1).getMedsGiven().get(1).getName();
-
-	//cout << endl;
-	//Record r = zech.getRecordList().get(0);
-	//medicineList ml = r.getMedsGiven();
-	//int test = ml.getLength();
-	//Medicine m = ml.get(0); //code breaks here
-
 	cout << "Medicine list index 1: " << zech.getRecordList().get(0).getMedsGiven().get(1).getName() << endl; //works now
 	cout << endl;
 	cout << medicineCollection.isEmpty();
@@ -34,6 +26,5 @@ int main () {
 	cout << endl;
 	medicineCollection.print();
 	cout << medicineCollection.getLength() << endl;
-	//mainStack->displayInOrder ();
 	return 0;
 }

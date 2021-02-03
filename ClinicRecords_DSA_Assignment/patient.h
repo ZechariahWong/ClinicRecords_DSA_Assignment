@@ -1,4 +1,4 @@
-//#include "record.h"
+#pragma once
 #include "recordList.h"
 
 class Patient {
@@ -14,6 +14,8 @@ public:
 	string getName();
 	string getPhoneNo();
 	string getNRIC();
+
 	recordList getRecordList();
 	void addRecord(Record r);
+
 };
