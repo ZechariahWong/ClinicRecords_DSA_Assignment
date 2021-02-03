@@ -33,6 +33,9 @@
     <ClCompile Include="record.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="recordList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="medicine.h">

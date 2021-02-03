@@ -2,7 +2,7 @@
 #include "medicine.h"
 #include "abstractList.h"
 class medicineList : public abstractList {
-protected:
+private:
 	struct medNode: Node
 	{
 		Medicine item;		// data item

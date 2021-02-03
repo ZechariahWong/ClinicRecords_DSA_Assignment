@@ -1,11 +1,12 @@
-#include "record.h"
+#pragma once
+#include "recordList.h"
 
 class Patient {
 private:
 	string name;
 	string phoneNo;
 	string NRIC;
-	//list<record> records;
+	recordList records;
 public:
 	Patient ();
 	Patient (string n, string hp, string nric);
@@ -13,5 +14,6 @@ public:
 	string getName();
 	string getPhoneNo();
 	string getNRIC();
-	//record getRecord (string id);
+	recordList getRecordList ();
+	bool addRecord (Record item);
 };

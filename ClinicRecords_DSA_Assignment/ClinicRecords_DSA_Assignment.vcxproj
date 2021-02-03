@@ -144,6 +144,7 @@
     <ClCompile Include="medicineList.cpp" />
     <ClCompile Include="patient.cpp" />
     <ClCompile Include="record.cpp" />
+    <ClCompile Include="recordList.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abstractList.h" />
