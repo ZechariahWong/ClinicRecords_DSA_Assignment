@@ -1,6 +1,6 @@
-#include "abstractList.h"
+#include "abstractLinkedList.h"
 
-bool abstractList::isEmpty ()
+bool abstractLinkedList::isEmpty()
 {
 	if (size == 0)
 		return true;
@@ -8,7 +8,7 @@ bool abstractList::isEmpty ()
 		return false;
 }
 
-int abstractList::getLength () { return size; };
+int abstractLinkedList::getLength() { return size; };
 
 //bool abstractList::add ()
 //{

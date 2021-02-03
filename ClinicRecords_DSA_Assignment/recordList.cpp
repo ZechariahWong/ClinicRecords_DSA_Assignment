@@ -1,10 +1,10 @@
-#include "medicineList.h"
+#include "recordList.h"
 
-medicineList::medicineList() { size = 0; firstNode = NULL; };
+recordList::recordList() { size = 0; firstNode = NULL; };
 
-bool medicineList::add (Medicine item)
+bool recordList::add(Record item)
 {
-	medNode* newNode = new medNode ();
+	recNode* newNode = new recNode();
 	newNode->item = item;
 	newNode->next = NULL;
 
@@ -14,9 +14,9 @@ bool medicineList::add (Medicine item)
 	}
 	else
 	{
-		//medNode *nextNode = new medNode ();
+		//recNode *nextNode = new recNode ();
 		//currentNode = firstNode;
-		medNode* currentNode = firstNode;
+		recNode* currentNode = firstNode;
 		while (currentNode->next != NULL)
 		{
 			currentNode = currentNode->next;
@@ -27,17 +27,17 @@ bool medicineList::add (Medicine item)
 	return true;
 }
 
-bool medicineList::add (int index, Medicine item)
+bool recordList::add(int index, Record item)
 {
 	if (index <= size - 1)
 	{
-		medNode* newNode = new medNode ();
+		recNode* newNode = new recNode();
 		newNode->item = item;
 		newNode->next = NULL;
-		cout << "Being added:" << newNode->item.getName() << endl;
+		cout << "Being added:" << newNode->item.getRecordID() << endl;
 		//cout << newNode->next << endl;
-		// Using a "firstNode" as it has to go through the entire medicineList
-		medNode* currentNode = firstNode;
+		// Using a "firstNode" as it has to go through the entire recordList
+		recNode* currentNode = firstNode;
 		if (index == 0) {
 			newNode->next = currentNode;
 			firstNode = newNode;
@@ -58,7 +58,7 @@ bool medicineList::add (int index, Medicine item)
 	return true;
 }
 
-bool medicineList::remove (int index)
+bool recordList::remove(int index)
 {
 	if (0 <= index && index <= size - 1)
 	{
@@ -72,21 +72,21 @@ bool medicineList::remove (int index)
 			}
 			else
 			{
-				cout << "Being removed: " << firstNode->item.getName() << endl;
+				cout << "Being removed: " << firstNode->item.getRecordID() << endl;
 				firstNode = firstNode->next;
 			}
 			size--;
 		}
 		else
 		{
-			medNode* currentNode = firstNode;
-			medNode* prevNode = NULL;
+			recNode* currentNode = firstNode;
+			recNode* prevNode = NULL;
 			for (int i = 0; i < index; i++)
 			{
 				prevNode = currentNode;
 				currentNode = currentNode->next;
 			}
-			cout << "Being removed: " << currentNode->item.getName() << endl;
+			cout << "Being removed: " << currentNode->item.getRecordID() << endl;
 			prevNode->next = currentNode->next;
 			delete currentNode;
 			size--;
@@ -99,10 +99,10 @@ bool medicineList::remove (int index)
 	//size--;
 }
 
-Medicine medicineList::get (int index)
+Record recordList::get(int index)
 {
 	if (index <= size) {
-		medNode* currentNode = firstNode;
+		recNode* currentNode = firstNode;
 		for (int i = 0; i < index; i++) {
 			currentNode = currentNode->next;
 		}
@@ -114,7 +114,7 @@ Medicine medicineList::get (int index)
 	}
 }
 
-//bool medicineList::isEmpty ()
+//bool recordList::isEmpty ()
 //{
 //	if (size == 0)
 //		return true;
@@ -122,12 +122,12 @@ Medicine medicineList::get (int index)
 //		return false;
 //}
 
-void medicineList::print ()
+void recordList::print()
 {
-	medNode* currentNode = firstNode;
+	recNode* currentNode = firstNode;
 	for (int i = 0; i <= size - 1; i++)
 	{
-		cout << currentNode->item.getName ()<< endl;
+		cout << currentNode->item.getRecordID() << endl;
 		currentNode = currentNode->next;
 	}
 	cout << "end" << endl;

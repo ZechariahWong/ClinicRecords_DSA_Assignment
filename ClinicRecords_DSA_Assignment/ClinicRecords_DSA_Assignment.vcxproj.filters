@@ -27,10 +27,22 @@
     <ClCompile Include="medicineList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="abstractList.cpp">
+    <ClCompile Include="record.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="record.cpp">
+    <ClCompile Include="abstractLinkedList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="recordList.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="PatientDB_BST.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="AVL_Tree.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="patientList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -44,13 +56,25 @@
     <ClInclude Include="medicineList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="abstractList.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="recordList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="record.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="abstractLinkedList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="PatientDB_BST.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="patientBinaryNode.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="AVL_Tree.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="patientList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
