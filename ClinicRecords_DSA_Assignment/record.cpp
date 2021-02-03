@@ -1,7 +1,7 @@
 #include "record.h"
 
 Record::Record () {};
-Record::Record (int id, string note, medicineList meds) {
+Record::Record (string id, string note, medicineList meds) {
 	recordID = id;
 	doctorNotes = note;
 	//amtPayable = getAmtPayable ();

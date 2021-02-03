@@ -30,10 +30,10 @@
     <ClCompile Include="record.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="recordList.cpp">
+    <ClCompile Include="abstractLinkedList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="abstractLinkedList.cpp">
+    <ClCompile Include="recordList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

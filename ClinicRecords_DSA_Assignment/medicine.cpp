@@ -1,7 +1,8 @@
 #include "medicine.h"
 
 // Constructors
-Medicine::Medicine () {}
+Medicine::Medicine() { name = ""; description = "", price = 0.00; }
+
 Medicine::Medicine (string n, string d, float p) {
 	name = n;
 	description = d;

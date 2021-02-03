@@ -1,6 +1,6 @@
 #include "medicineList.h"
 
-//medicineList::medicineList () { size = 0; };
+medicineList::medicineList() { size = 0; firstNode == NULL; };
 
 bool medicineList::add (Medicine item)
 {

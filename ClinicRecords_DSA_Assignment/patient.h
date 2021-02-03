@@ -14,6 +14,8 @@ public:
 	string getName();
 	string getPhoneNo();
 	string getNRIC();
-	recordList getRecordList ();
-	bool addRecord (Record item);
+
+	recordList getRecordList();
+	void addRecord(Record r);
+
 };
