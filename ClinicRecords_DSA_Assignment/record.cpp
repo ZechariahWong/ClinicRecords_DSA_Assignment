@@ -1,7 +1,6 @@
 #include "record.h"
 
 Record::Record () {};
-
 Record::Record (string id, string note, medicineList meds) {
 	recordID = id;
 	doctorNotes = note;
@@ -22,15 +21,7 @@ void Record::calcBill() {
 }
 
 
-//float record::getAmtPayable () {
-	//for (Medicine m; i < medsGiven.size(); i++)
-	//{
-	//
-	//	amtPayable += medsGiven[i].getPrice ();
-	//}
-//}
-
-
-//void record::setRecordID () {}
-//void record::setDoctorNotes () {}
-//void record::setAmtPayable () {}
+void Record::print () {
+	cout << "ID: " << getRecordID() << endl
+		<< "Notes: " << getDoctorNotes() << endl;
+}

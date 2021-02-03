@@ -15,14 +15,14 @@ public:
 	string		 getRecordID ();
 	string		 getDoctorNotes ();
 	medicineList getMedsGiven ();
-
-	void calcBill ();
 	float getBill ();
 
+
+	// Setters
 	//void setRecordID (string id) ;
 	void setDoctorNotes (string note) ;
-	//// setAmtPayable maybe irrelevant? Regardles 
-	//// I will just have the function iterate 
-	//// and amtPayable += medsGive[i].getPrice()
-	//void setAmtPayable () ;
+	void calcBill ();						// Calculates the cost of all the meds
+	//// setAmtPayable maybe irrelevant? 
+
+	void print ();
 };

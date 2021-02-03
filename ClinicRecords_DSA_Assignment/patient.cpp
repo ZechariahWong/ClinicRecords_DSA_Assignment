@@ -20,5 +20,6 @@ void Patient::setQueueNo(int no) { queueNo = no; }
 void Patient::addRecord(Record r)
 {
 	records.add(r);
-	cout << "A new record is added into your records list." << endl;
+	cout << "A new record has been added into your records list." << endl;
 }
+

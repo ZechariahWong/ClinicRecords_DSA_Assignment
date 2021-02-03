@@ -127,8 +127,14 @@ void medicineList::print ()
 	medNode* currentNode = firstNode;
 	for (int i = 0; i <= size - 1; i++)
 	{
-		cout << currentNode->item.getName ()<< endl;
+		if (i != size - 1) {
+			cout << currentNode->item.getName ()<< ", ";
+		}
+		else
+		{
+			cout << currentNode->item.getName () << ".";
+		}
 		currentNode = currentNode->next;
 	}
-	cout << "end" << endl;
+	cout << endl;
 }

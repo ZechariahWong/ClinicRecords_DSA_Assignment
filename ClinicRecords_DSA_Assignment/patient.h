@@ -1,4 +1,5 @@
 //#include "record.h"
+ 
 #pragma once
 #include "recordList.h"
 
@@ -17,8 +18,10 @@ public:
 	string getName();
 	string getPhoneNo();
 	string getNRIC();
+
 	recordList getRecordList();
 	int getQueueNo();
 	void setQueueNo(int no);
 	void addRecord(Record r);
+
 };
