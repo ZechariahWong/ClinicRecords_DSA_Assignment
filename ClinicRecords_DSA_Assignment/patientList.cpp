@@ -27,37 +27,6 @@ bool patientList::add(Patient item)
 	return true;
 }
 
-//bool patientList::add(int index, Patient item)
-//{
-//	if (index <= size - 1)
-//	{
-//		patientNode* newNode = new patientNode();
-//		newNode->item = item;
-//		newNode->next = NULL;
-//		cout << "Being added:" << newNode->item.getName() << endl;
-//		//cout << newNode->next << endl;
-//		// Using a "firstNode" as it has to go through the entire patientList
-//		patientNode* currentNode = firstNode;
-//		if (index == 0) {
-//			newNode->next = currentNode;
-//			firstNode = newNode;
-//		}
-//		else {
-//			for (int i = 0; i < index - 1; i++)
-//			{
-//				currentNode = currentNode->next;
-//			}
-//			// index - 1 means that it will stop just before the index 
-//			// effectively 'taking' its place
-//			newNode->next = currentNode->next;
-//			currentNode->next = newNode;
-//		}
-//		size++;
-//	}
-//
-//	return true;
-//}
-
 bool patientList::remove(int index)
 {
 	if (0 <= index && index <= size - 1)
@@ -114,12 +83,12 @@ Patient patientList::get(int index)
 	}
 }
 
-bool patientList::clear()
-{
-	delete firstNode;
-	firstNode = NULL;
-	return true;
-}
+//bool patientList::clear()
+//{
+//	delete firstNode;
+//	firstNode = NULL;
+//	return true;
+//}
 
 void patientList::print()
 {
@@ -129,5 +98,5 @@ void patientList::print()
 		cout << currentNode->item.getName() << endl;
 		currentNode = currentNode->next;
 	}
-	cout << "end" << endl;
+	//cout << "end" << endl;
 }

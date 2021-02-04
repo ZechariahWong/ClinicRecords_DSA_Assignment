@@ -12,7 +12,8 @@ Medicine Strepsils = Medicine("Strepsils", "For sorethroats", 2.5);
 PatientDB_BST database = PatientDB_BST();
 //ClinicQueue cQueue = ClinicQueue();
 
-Patient zech = Patient("Zech", "+65 1234 5678", "TXXXXXXXA");
+
+//Patient zech = Patient("Zech", "+65 1234 5678", "TXXXXXXXA");
 medicineList medicineCollection = medicineList();
 
 // subject to required modifications
@@ -73,9 +74,7 @@ void issueQueueNo()
 	int patientChoice;
 	cout << "Select result (1 being the topmost patient): ";
 	cin >> patientChoice;
-
-	Patient pContext = database.searchResults.get(patientChoice - 1);
-	cout << pContext.getName() << " selected." << endl; // for debugging
+	cout << database.searchResults.get (patientChoice - 1).getName() << " selected." << endl; // for debugging
 
 	//pContext.setQueueNo(someRandomUnusedNumber);
 	//cQueue.push(someRandomUnusedNumber);
@@ -128,6 +127,11 @@ void menuChoice()
 }
 
 int main() {
+	Patient zech = Patient ("zech", "123", "001");
+	Patient kelvin = Patient ("kelvin", "321", "002");
+	database.insert (zech);
+	database.insert (kelvin);
+
 	//medicineCollection.add(panadol);
 	//medicineCollection.add(coughSyr);
 	//medicineCollection.add(Strepsils);
