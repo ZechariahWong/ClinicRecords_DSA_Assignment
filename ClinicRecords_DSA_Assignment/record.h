@@ -8,7 +8,7 @@ private:
 	float amtPayable = 0;			// This will be the sum of the medicine price from medsGiven
 public:
 	Record();
-	Record (string id, string note, medicineList meds);
+	Record (string id, string note, medicineList meds, float amtPayable);
 	
 
 	// Getter functions

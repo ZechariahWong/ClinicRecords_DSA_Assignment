@@ -250,10 +250,10 @@ void PatientDB_BST::display()
 
 void PatientDB_BST::resultSearch(string name)
 {
-	if (!searchResults.isEmpty()) // to clear previous search results
-	{
-		searchResults.clear();
-	}
+	//if (!searchResults.isEmpty()) // to clear previous search results
+	//{
+	//}
+	searchResults.clear();
 
 	if (isEmpty())
 		std::cout << "No patient found" << std::endl;

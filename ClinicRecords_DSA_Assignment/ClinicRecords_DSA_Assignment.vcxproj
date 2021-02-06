@@ -139,6 +139,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="abstractLinkedList.cpp" />
+    <ClCompile Include="AppointmentQueue.cpp" />
     <ClCompile Include="AVL_Tree.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="medicine.cpp" />
@@ -151,6 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="abstractLinkedList.h" />
+    <ClInclude Include="AppointmentQueue.h" />
     <ClInclude Include="AVL_Tree.h" />
     <ClInclude Include="medicine.h" />
     <ClInclude Include="medicineList.h" />

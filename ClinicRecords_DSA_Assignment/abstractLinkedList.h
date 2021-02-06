@@ -20,6 +20,7 @@ public:
 
 	bool isEmpty();						// Empty = True 
 	int getLength();						// getLength starts from 0
+	void clear ();
 
 	// pure virtual functions: These functions will always be overwritten
 	virtual void print() = 0;
