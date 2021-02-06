@@ -14,8 +14,6 @@ Medicine Strepsils = Medicine("Strepsils", "For sorethroats", 2.5);
 PatientDB_BST database = PatientDB_BST();
 AppointmentQueue aQueue = AppointmentQueue();
 
-
-//Patient zech = Patient("Zech", "+65 1234 5678", "TXXXXXXXA");
 medicineList medicineCollection = medicineList();
 
 // subject to required modifications
@@ -53,7 +51,38 @@ void registerPatient()
 	cout << "Patient successfully registered." << endl;
 	cout << endl;
 }
+void searchPatient ()
+{
+	string name;
+	cout << "Insert Patient's Name: " << endl;
+	cin >> name;
 
+	database.resultSearch (name);
+
+	cout << "Possible patient(s):" << endl;
+	database.displaySearchResults ();
+}
+void enterMedicineDetails (medicineList medsGiven, float& subTotal) //helper func for add appt info
+{
+	string medsName, medsDesc, amt;
+
+	cout << "Enter medicine name given: " << endl;
+	cin >> medsName;
+	cout << endl;
+
+	cout << "Enter medicine description given: " << endl;
+	cin >> medsDesc;
+	cout << endl;
+
+	cout << "Enter medicine price: " << endl;
+	cin >> amt;
+	cout << endl;
+
+	float medAmt = atof (amt.c_str ());
+	Medicine m = Medicine (medsName, medsDesc, medAmt);
+	subTotal += medAmt;
+	medsGiven.add (m);
+}
 void addApptInfo()
 {
 	searchPatient();
@@ -93,40 +122,6 @@ void addApptInfo()
 	cout << "Record successfully added to patient data." << endl;
 }
 
-void enterMedicineDetails(medicineList medsGiven, float& subTotal) //helper func for add appt info
-{
-	string medsName, medsDesc, amt;
-
-	cout << "Enter medicine name given: " << endl;
-	cin >> medsName;
-	cout << endl;
-
-	cout << "Enter medicine description given: " << endl;
-	cin >> medsDesc;
-	cout << endl;
-
-	cout << "Enter medicine price: " << endl;
-	cin >> amt;
-	cout << endl;
-
-	float medAmt = atof(amt.c_str());
-	Medicine m = Medicine(medsName, medsDesc, medAmt);
-	subTotal += medAmt;
-	medsGiven.add(m);
-}
-
-void searchPatient()
-{
-	string name;
-	cout << "Insert Patient's Name: " << endl;
-	cin >> name;
-
-	database.resultSearch(name);
-
-	cout << "Possible patient(s):" << endl;
-	database.displaySearchResults();
-}
-
 void issueQueueNo()
 {
 	searchPatient();
@@ -134,7 +129,7 @@ void issueQueueNo()
 	cout << "Select result (1 being the topmost patient): ";
 	cin >> patientChoice;
 	Patient *patient = &database.searchResults.get(patientChoice - 1);
-	cout << patient->getName() << " selected." << endl; // for debugging
+	//cout << patient->getName() << " selected." << endl; // for debugging
 
 	//patientContext.setQueueNo(someRandomUnusedNumber);
 	aQueue.enqueue(*patient);
@@ -199,11 +194,8 @@ void menuChoice()
 	}
 }
 
-int numGen () {
-	return 0;
-}
-
 int main() {
+
 	Patient zech = Patient ("zech", "123", "001");
 	Patient kelvin = Patient ("kelvin", "321", "002");
 	database.insert(zech);
@@ -235,6 +227,5 @@ int main() {
 	//mainStack->displayInOrder ();
 	menuDisplay();
 	menuChoice();
-
 	return 0;
 }

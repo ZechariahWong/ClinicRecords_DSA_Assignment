@@ -144,7 +144,6 @@
     <ClCompile Include="main.cpp" />
     <ClCompile Include="medicine.cpp" />
     <ClCompile Include="medicineList.cpp" />
-    <ClCompile Include="numQueue.cpp" />
     <ClCompile Include="patient.cpp" />
     <ClCompile Include="PatientDB_BST.cpp" />
     <ClCompile Include="patientList.cpp" />
@@ -161,7 +160,6 @@
     <ClInclude Include="patientBinaryNode.h" />
     <ClInclude Include="PatientDB_BST.h" />
     <ClInclude Include="patientList.h" />
-    <ClInclude Include="numQueue.h" />
     <ClInclude Include="record.h" />
     <ClInclude Include="recordList.h" />
   </ItemGroup>

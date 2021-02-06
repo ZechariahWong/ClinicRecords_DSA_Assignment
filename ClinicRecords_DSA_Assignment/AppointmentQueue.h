@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <cstdlib>			// Using this for the rand() function
 #include "patient.h"
 
 class AppointmentQueue
@@ -13,7 +14,6 @@ private:
 
 	Node* frontNode;
 	Node* backNode;
-
 public:
 	AppointmentQueue();
 	~AppointmentQueue();
