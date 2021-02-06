@@ -19,11 +19,11 @@ AppointmentQueue::~AppointmentQueue()
 	backNode = NULL;
 }
 
-bool AppointmentQueue::enqueue(Patient item)
+bool AppointmentQueue::enqueue(Patient* item)
 {
 	
 	Node* newNode = new Node();
-	newNode->item = item;
+	newNode->item = *item;
 	newNode->next = NULL;
 	cout << "Enqueue new: " << newNode->item.getName () << endl;
 
@@ -41,6 +41,7 @@ bool AppointmentQueue::enqueue(Patient item)
 			cout << "Current: " << currentNode->item.getName () << endl;
 			if (currentNode->item.getName () == newNode->item.getName ())
 			{
+				cout <<"Current "<< currentNode->item.getName () << endl << "New " << newNode->item.getName() << endl;
 				cout << "This patient already has an issued queue number!\n";
 				break;
 			}

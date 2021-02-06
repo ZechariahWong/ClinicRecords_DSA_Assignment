@@ -129,10 +129,11 @@ void issueQueueNo()
 	cout << "Select result (1 being the topmost patient): ";
 	cin >> patientChoice;
 	Patient *patient = &database.searchResults.get(patientChoice - 1);
-	//cout << patient->getName() << " selected." << endl; // for debugging
+	//cout << "Queuing: " << patient->getName () << endl;
+	cout << patient->getName() << " selected." << endl; // for debugging
 
 	//patientContext.setQueueNo(someRandomUnusedNumber);
-	aQueue.enqueue(*patient);
+	aQueue.enqueue(patient);
 }
 
 void viewAllPatients()

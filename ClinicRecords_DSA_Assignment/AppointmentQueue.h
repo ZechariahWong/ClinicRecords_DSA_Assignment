@@ -18,7 +18,7 @@ public:
 	AppointmentQueue();
 	~AppointmentQueue();
 
-	bool enqueue(Patient p);
+	bool enqueue(Patient* p);
 	bool dequeue();
 	bool dequeue(Patient& p);
 	Patient getFront();
