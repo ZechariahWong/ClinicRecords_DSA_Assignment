@@ -45,7 +45,7 @@
     <ClCompile Include="patientList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="numQueue.cpp">
+    <ClCompile Include="AppointmentQueue.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,7 +80,7 @@
     <ClInclude Include="patientList.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="numQueue.h">
+    <ClInclude Include="AppointmentQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

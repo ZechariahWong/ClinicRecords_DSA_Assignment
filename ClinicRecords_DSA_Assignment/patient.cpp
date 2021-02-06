@@ -22,4 +22,3 @@ void Patient::addRecord(Record r)
 	records.add(r);
 	cout << "A new record has been added into your records list." << endl;
 }
-
