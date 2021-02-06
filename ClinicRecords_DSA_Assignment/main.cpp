@@ -126,6 +126,10 @@ void menuChoice()
 	}
 }
 
+int numGen () {
+	return 0;
+}
+
 int main() {
 	Patient zech = Patient ("zech", "123", "001");
 	Patient kelvin = Patient ("kelvin", "321", "002");

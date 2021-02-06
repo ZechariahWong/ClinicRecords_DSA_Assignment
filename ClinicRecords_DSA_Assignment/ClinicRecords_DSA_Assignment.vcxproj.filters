@@ -45,6 +45,9 @@
     <ClCompile Include="patientList.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="numQueue.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="medicine.h">
@@ -75,6 +78,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="patientList.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="numQueue.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
