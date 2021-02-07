@@ -19,7 +19,8 @@ public:
 	// isEmpty()
 	patientList();
 
-	Patient get(int index);
+	//Patient get(int index);
+	Patient* get(int index);
 
 	bool add(Patient item);
 	//bool add(int index, Medicine item);

@@ -62,6 +62,6 @@ public:
 	void resultSearch(string name);
 	void resultSearch(PatientBinaryNode* t, string name);
 	void displaySearchResults();
-	/*patientList getQueue();*/
+	void update(Patient* patient);
 	//string decapitalizer(char s); //helper function to convert string to lowercase;
 };
