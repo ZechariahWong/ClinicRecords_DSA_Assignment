@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <cstdlib>			// Using this for the rand() function
+#include <time.h>			// for time to seed 
 #include "patient.h"
 
 class AppointmentQueue
@@ -18,7 +19,7 @@ public:
 	AppointmentQueue();
 	~AppointmentQueue();
 
-	bool enqueue(Patient* p);
+	bool enqueue(Patient p);
 	bool dequeue();
 	bool dequeue(Patient& p);
 	Patient getFront();

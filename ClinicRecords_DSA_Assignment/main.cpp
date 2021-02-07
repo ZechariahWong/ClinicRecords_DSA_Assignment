@@ -7,6 +7,7 @@
 #include "AppointmentQueue.h"
 
 
+
 Medicine panadol = Medicine("Panadol", "For pain", 3.5);
 Medicine coughSyr = Medicine("Cough Syrup", "For coughs", 0.9);
 Medicine Strepsils = Medicine("Strepsils", "For sorethroats", 2.5);
@@ -130,11 +131,10 @@ void issueQueueNo()
 	cin >> patientChoice;
 	Patient *patient = database.searchResults.get(patientChoice - 1);
 	cout << "\n" << patient->getName() << " selected." << endl; // for debugging
-
-	patient->setQueueNo(rand()%9999);
+	aQueue.enqueue(*patient);
 	database.update(patient);
-	aQueue.enqueue(patient);
 }
+
 
 void viewAllPatients()
 {
@@ -192,7 +192,7 @@ void menuChoice()
 			break;
 
 		case 7:
-			break;
+			return;
 
 		default:
 			cout << "Invalid choice, please select a valid choice." << endl;
@@ -203,7 +203,8 @@ void menuChoice()
 }
 
 int main() {
-
+	// Seeding at the very start
+	srand (time (NULL));
 	Patient zech = Patient ("zech", "123", "001");
 	Patient kelvin = Patient ("kelvin", "321", "002");
 	Patient patient = Patient ("patient", "321213", "003");
