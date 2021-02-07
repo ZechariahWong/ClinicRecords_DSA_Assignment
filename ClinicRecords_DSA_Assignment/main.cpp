@@ -19,7 +19,7 @@ medicineList medicineCollection = medicineList();
 // subject to required modifications
 void menuDisplay()
 {
-	cout << "Clinic Appointment System (v0.69)" << endl;
+	cout << "\nClinic Appointment System (v0.69)" << endl;
 	cout << "=================================" << endl;
 	cout << "1) Register Patient" << endl;
 	cout << "2) Add appointment information" << endl; //add record to patient
@@ -129,8 +129,7 @@ void issueQueueNo()
 	cout << "Select result (1 being the topmost patient): ";
 	cin >> patientChoice;
 	Patient patient = database.searchResults.get(patientChoice - 1);
-	cout << "Queuing: " << patient.getName() << endl;
-	cout << patient.getName() << " selected." << endl; // for debugging
+	cout << "\n" << patient.getName() << " selected." << endl; // for debugging
 
 	//patientContext.setQueueNo(someRandomUnusedNumber);
 	aQueue.enqueue(patient);
@@ -199,8 +198,12 @@ int main() {
 
 	Patient zech = Patient ("zech", "123", "001");
 	Patient kelvin = Patient ("kelvin", "321", "002");
+	Patient patient = Patient ("patient", "321213", "003");
+	Patient patient2 = Patient ("patient2", "54321", "004");
 	database.insert(zech);
 	database.insert(kelvin);
+	database.insert (patient);
+	database.insert (patient2);
 
 	//medicineCollection.add(panadol);
 	//medicineCollection.add(coughSyr);

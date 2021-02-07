@@ -23,6 +23,7 @@ void PatientDB_BST::inorder(PatientBinaryNode* t)
 		std::cout << t->item.getName() << std::endl;
 		std::cout << t->item.getPhoneNo() << std::endl;
 		std::cout << t->item.getNRIC() << std::endl;
+		std::cout << t->item.getQueueNo() << std::endl;
 		inorder(t->right);
 	}
 }
