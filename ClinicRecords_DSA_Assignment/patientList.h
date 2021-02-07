@@ -9,6 +9,7 @@ protected:
 		Patient item;		// data item
 		patientNode* next;
 	};
+
 	patientNode* firstNode;		// point to the first item
 
 public:
@@ -23,6 +24,6 @@ public:
 	bool add(Patient item);
 	//bool add(int index, Medicine item);
 	bool remove(int index);
-	//bool clear();
+	bool clear();
 	void print();
 };

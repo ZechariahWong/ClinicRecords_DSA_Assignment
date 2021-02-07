@@ -78,7 +78,7 @@ void enterMedicineDetails (medicineList medsGiven, float& subTotal) //helper fun
 	cin >> amt;
 	cout << endl;
 
-	float medAmt = atof (amt.c_str ());
+	float medAmt = atof(amt.c_str());
 	Medicine m = Medicine (medsName, medsDesc, medAmt);
 	subTotal += medAmt;
 	medsGiven.add (m);
@@ -89,7 +89,7 @@ void addApptInfo()
 	int patientChoice;
 	cout << "Select result (1 being the topmost patient): ";
 	cin >> patientChoice;
-	Patient *patient = &database.searchResults.get(patientChoice - 1);
+	Patient patient = database.searchResults.get(patientChoice - 1);
 
 	string recordId, notes;
 	medicineList medsGiven = medicineList();
@@ -117,7 +117,7 @@ void addApptInfo()
 	}
 
 	Record r = Record(recordId, notes, medsGiven, subTotal);
-	patient->addRecord(r);
+	patient.addRecord(r);
 
 	cout << "Record successfully added to patient data." << endl;
 }
@@ -128,9 +128,9 @@ void issueQueueNo()
 	int patientChoice;
 	cout << "Select result (1 being the topmost patient): ";
 	cin >> patientChoice;
-	Patient *patient = &database.searchResults.get(patientChoice - 1);
-	//cout << "Queuing: " << patient->getName () << endl;
-	cout << patient->getName() << " selected." << endl; // for debugging
+	Patient patient = database.searchResults.get(patientChoice - 1);
+	cout << "Queuing: " << patient.getName() << endl;
+	cout << patient.getName() << " selected." << endl; // for debugging
 
 	//patientContext.setQueueNo(someRandomUnusedNumber);
 	aQueue.enqueue(patient);

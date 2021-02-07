@@ -83,12 +83,15 @@ Patient patientList::get(int index)
 	}
 }
 
-//bool patientList::clear()
-//{
-//	delete firstNode;
-//	firstNode = NULL;
-//	return true;
-//}
+bool patientList::clear()
+{
+	while (size > 0)
+	{
+		remove(size - 1);
+	}
+
+	return true;
+}
 
 void patientList::print()
 {

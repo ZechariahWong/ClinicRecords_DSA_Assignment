@@ -19,11 +19,11 @@ AppointmentQueue::~AppointmentQueue()
 	backNode = NULL;
 }
 
-bool AppointmentQueue::enqueue(Patient* item)
+bool AppointmentQueue::enqueue(Patient item)
 {
 	
 	Node* newNode = new Node();
-	newNode->item = *item;
+	newNode->item = item;
 	newNode->next = NULL;
 	cout << "Enqueue new: " << newNode->item.getName () << endl;
 

@@ -3,6 +3,7 @@
 PatientDB_BST::PatientDB_BST()
 {
 	root = NULL;
+	searchResults = patientList();
 }
 
 void PatientDB_BST::inorder()
@@ -250,9 +251,6 @@ void PatientDB_BST::display()
 
 void PatientDB_BST::resultSearch(string name)
 {
-	//if (!searchResults.isEmpty()) // to clear previous search results
-	//{
-	//}
 	searchResults.clear();
 
 	if (isEmpty())
@@ -276,3 +274,8 @@ void PatientDB_BST::displaySearchResults()
 {
 	searchResults.print();
 }
+
+//patientList PatientDB_BST::getQueue()
+//{
+//	return searchResults;
+//}
