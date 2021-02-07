@@ -161,7 +161,7 @@ void callNextQueueNumber ()
 void menuChoice ()
 {
 	int choice = 0;
-	while (choice != 6)
+	while (choice != 7)
 	{
 		cout << "Choice: " << endl;
 		cin >> choice;
@@ -190,7 +190,6 @@ void menuChoice ()
 		case 6:
 			callNextQueueNumber ();
 			break;
-
 		case 7:
 			break;
 
