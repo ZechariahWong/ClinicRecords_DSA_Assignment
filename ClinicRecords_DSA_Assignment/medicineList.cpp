@@ -14,8 +14,6 @@ bool medicineList::add (Medicine item)
 	}
 	else
 	{
-		//medNode *nextNode = new medNode ();
-		//currentNode = firstNode;
 		medNode* currentNode = firstNode;
 		while (currentNode->next != NULL)
 		{
@@ -35,8 +33,6 @@ bool medicineList::add (int index, Medicine item)
 		newNode->item = item;
 		newNode->next = NULL;
 		cout << "Being added:" << newNode->item.getName() << endl;
-		//cout << newNode->next << endl;
-		// Using a "firstNode" as it has to go through the entire medicineList
 		medNode* currentNode = firstNode;
 		if (index == 0) {
 			newNode->next = currentNode;
@@ -91,12 +87,12 @@ bool medicineList::remove (int index)
 			delete currentNode;
 			size--;
 		}
+		// I think it should work if we put size--; here but I dont want to make such a last minute change after all the testing
 		return true;
 	}
 	else {
 		return false;
 	}
-	//size--;
 }
 
 Medicine medicineList::get (int index)
@@ -106,7 +102,6 @@ Medicine medicineList::get (int index)
 		for (int i = 0; i < index; i++) {
 			currentNode = currentNode->next;
 		}
-		//cout << "Item retrieved: " << currentNode->item.getName () << endl;
 		return currentNode->item;
 	}
 	else {
@@ -114,13 +109,6 @@ Medicine medicineList::get (int index)
 	}
 }
 
-//bool medicineList::isEmpty ()
-//{
-//	if (size == 0)
-//		return true;
-//	else
-//		return false;
-//}
 
 void medicineList::print ()
 {

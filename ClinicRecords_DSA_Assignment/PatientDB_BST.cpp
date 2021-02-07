@@ -3,6 +3,7 @@
 PatientDB_BST::PatientDB_BST()
 {
 	root = NULL;
+	searchResults = patientList();
 }
 
 void PatientDB_BST::inorder()
@@ -22,6 +23,7 @@ void PatientDB_BST::inorder(PatientBinaryNode* t)
 		std::cout << t->item.getName() << std::endl;
 		std::cout << t->item.getPhoneNo() << std::endl;
 		std::cout << t->item.getNRIC() << std::endl;
+		std::cout << t->item.getQueueNo() << std::endl;	
 		inorder(t->right);
 	}
 }
@@ -250,9 +252,6 @@ void PatientDB_BST::display()
 
 void PatientDB_BST::resultSearch(string name)
 {
-	//if (!searchResults.isEmpty()) // to clear previous search results
-	//{
-	//}
 	searchResults.clear();
 
 	if (isEmpty())
@@ -276,3 +275,8 @@ void PatientDB_BST::displaySearchResults()
 {
 	searchResults.print();
 }
+
+//void PatientDB_BST::update(Patient* p)
+//{
+//	search(*p)->item = *p;
+//}
