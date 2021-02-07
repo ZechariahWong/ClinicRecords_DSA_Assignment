@@ -23,6 +23,6 @@ public:
 	bool dequeue(Patient& p);
 	Patient getFront();
 	void getFront(Patient& p);
-	void track(Patient& p); //tell patients how many patients are ahead of them
+	int track(Patient& p); //tell patients how many patients are ahead of them
 	bool isEmpty();
 };

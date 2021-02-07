@@ -142,9 +142,24 @@ void AppointmentQueue::getFront(Patient& item)
 	item = frontNode->item;
 }
 
-void track(Patient& item)
+int AppointmentQueue::track(Patient& item)
 {
-
+	 //Version 1
+	if (!isEmpty()) {
+		int* ahead = 0;
+		Node* currentNode = frontNode;
+		
+		while (currentNode->next != NULL) {
+			if (currentNode->item.getName () == item.getName ())
+			{
+				break;
+			}
+			currentNode = currentNode->next;
+			ahead += 1;
+		}
+		return *ahead;
+		delete ahead;
+	}
 }
 
 bool AppointmentQueue::isEmpty()
