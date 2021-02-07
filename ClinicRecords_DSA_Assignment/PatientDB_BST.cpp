@@ -276,7 +276,7 @@ void PatientDB_BST::displaySearchResults()
 	searchResults.print();
 }
 
-void PatientDB_BST::update(Patient* p)
-{
-	search(*p)->item = *p;
-}
+//void PatientDB_BST::update(Patient* p)
+//{
+//	search(*p)->item = *p;
+//}

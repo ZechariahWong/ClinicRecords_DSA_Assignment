@@ -128,12 +128,12 @@ void issueQueueNo()
 	int patientChoice;
 	cout << "Select result (1 being the topmost patient): ";
 	cin >> patientChoice;
-	Patient *patient = database.searchResults.get(patientChoice - 1);
-	cout << "\n" << patient->getName() << " selected." << endl; // for debugging
+	Patient *patient = database.searchResults.get(patientChoice - 1); // points to patient in search result
+	Patient *patientContext = &database.search(*patient)->item; // point to address of patient retrieved from database search
+	cout << "\n" << patientContext->getName() << " selected." << endl; // for debugging
 
-	patient->setQueueNo(rand()%9999);
-	database.update(patient);
-	aQueue.enqueue(patient);
+	patientContext->setQueueNo(rand() % 9999); // patient in DB changes queue no
+	aQueue.enqueue(patientContext);
 }
 
 void viewAllPatients()
@@ -203,7 +203,7 @@ void menuChoice()
 }
 
 int main() {
-
+	srand(time(NULL));
 	Patient zech = Patient ("zech", "123", "001");
 	Patient kelvin = Patient ("kelvin", "321", "002");
 	Patient patient = Patient ("patient", "321213", "003");
