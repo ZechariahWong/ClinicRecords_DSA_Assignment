@@ -89,7 +89,7 @@ void addApptInfo()
 	int patientChoice;
 	cout << "Select result (1 being the topmost patient): ";
 	cin >> patientChoice;
-	Patient patient = database.searchResults.get(patientChoice - 1);
+	Patient *patient = database.searchResults.get(patientChoice - 1);
 
 	string recordId, notes;
 	medicineList medsGiven = medicineList();
@@ -117,7 +117,7 @@ void addApptInfo()
 	}
 
 	Record r = Record(recordId, notes, medsGiven, subTotal);
-	patient.addRecord(r);
+	patient->addRecord(r);
 
 	cout << "Record successfully added to patient data." << endl;
 }
@@ -128,16 +128,24 @@ void issueQueueNo()
 	int patientChoice;
 	cout << "Select result (1 being the topmost patient): ";
 	cin >> patientChoice;
-	Patient patient = database.searchResults.get(patientChoice - 1);
-	cout << "\n" << patient.getName() << " selected." << endl; // for debugging
+	Patient *patient = database.searchResults.get(patientChoice - 1);
+	cout << "\n" << patient->getName() << " selected." << endl; // for debugging
 
-	//patientContext.setQueueNo(someRandomUnusedNumber);
+	patient->setQueueNo(rand()%9999);
+	database.update(patient);
 	aQueue.enqueue(patient);
 }
 
 void viewAllPatients()
 {
+	// debug database print
+	cout << "===DATABASE===" << endl;
 	database.display();
+
+	// debug queue print
+	cout << "===QUEUE===" << endl;
+	aQueue.display();
+	
 	cout << endl;
 }
 

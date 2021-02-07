@@ -276,7 +276,7 @@ void PatientDB_BST::displaySearchResults()
 	searchResults.print();
 }
 
-//patientList PatientDB_BST::getQueue()
-//{
-//	return searchResults;
-//}
+void PatientDB_BST::update(Patient* p)
+{
+	search(*p)->item = *p;
+}

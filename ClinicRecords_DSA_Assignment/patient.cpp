@@ -15,6 +15,7 @@ string Patient::getNRIC () { return NRIC; }
 
 recordList Patient::getRecordList() { return records; }
 int Patient::getQueueNo() { return queueNo; }
+
 void Patient::setQueueNo(int no) { queueNo = no; }
 
 void Patient::addRecord(Record r)
