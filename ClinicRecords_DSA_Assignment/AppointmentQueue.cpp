@@ -1,16 +1,16 @@
 #include "AppointmentQueue.h"
 
-AppointmentQueue::AppointmentQueue()
+AppointmentQueue::AppointmentQueue ()
 {
 	frontNode = NULL;
 	backNode = NULL;
 }
 
-AppointmentQueue::~AppointmentQueue()
+AppointmentQueue::~AppointmentQueue ()
 {
-	while (!isEmpty())
+	while (!isEmpty ())
 	{
-		dequeue();
+		dequeue ();
 	}
 
 	delete frontNode;
@@ -18,6 +18,7 @@ AppointmentQueue::~AppointmentQueue()
 	frontNode = NULL;
 	backNode = NULL;
 }
+
 
 bool AppointmentQueue::enqueue (Patient* item)
 {
@@ -37,17 +38,15 @@ bool AppointmentQueue::enqueue (Patient* item)
 		Node* currentNode = NULL;
 		currentNode = frontNode;
 		// First checking to see if patient is already in the appointment queue
-		// This is here to catch a duplicate in the case that there is no next pointer
-		// It is an edge case for the first record and then trying to have the patient
-		// add another record
+		// This is here to catch a the first and last nodes
 		if (currentNode->item.getName () == newNode->item.getName () || backNode->item.getName () == newNode->item.getName ())
 		{
 			cout << "This patient already has an issued queue number!\n";
 			return false;
 		}
 		else {
+			// If any point in time a duplicate name is found it will exit the method
 			while (currentNode->next != NULL) {
-				// If any point in time a duplicate name is found it will exit the method
 				if (currentNode->item.getName () == newNode->item.getName ())
 				{
 					cout << currentNode->item.getName () << " already has an issued queue number! " << newNode->item.getQueueNo () << "\n";
@@ -69,8 +68,7 @@ bool AppointmentQueue::enqueue (Patient* item)
 					currentNode = currentNode->next;
 				}
 			}
-			// Check the last node
-			// This is more of an edge case and its a bit hard to test
+			// Checking the queue number of the last node
 			if (newNode->item.getQueueNo () == backNode->item.getQueueNo ())
 			{
 				newNode->item.setQueueNo (rand () % 9999);
@@ -83,12 +81,17 @@ bool AppointmentQueue::enqueue (Patient* item)
 		delete currentNode;
 		backNode->next = newNode;
 	}
+	// If a duplicate is not found it will set the backNodes next to point to the new node
+	cout << "No record found! Adding an appointment for " << newNode->item.getName () << endl;
+	backNode = newNode;
+	return true;
+}
 
-bool AppointmentQueue::dequeue()
+bool AppointmentQueue::dequeue ()
 {
 	Node* temp = frontNode;
 
-	if (!isEmpty())
+	if (!isEmpty ())
 	{
 		if (frontNode == backNode)
 		{
@@ -108,11 +111,11 @@ bool AppointmentQueue::dequeue()
 	return false;
 }
 
-bool AppointmentQueue::dequeue(Patient& item)
+bool AppointmentQueue::dequeue (Patient& item)
 {
 	Node* temp = frontNode;
 
-	if (!isEmpty())
+	if (!isEmpty ())
 	{
 		item = frontNode->item;
 		frontNode = frontNode->next;
@@ -124,64 +127,38 @@ bool AppointmentQueue::dequeue(Patient& item)
 	return false;
 }
 
-Patient AppointmentQueue::getFront()
+Patient AppointmentQueue::getFront ()
 {
-	if (!isEmpty())
+	if (!isEmpty ())
 		return frontNode->item;
 	else
 		cout << "Queue is empty" << endl;
 }
 
-void AppointmentQueue::getFront(Patient& item)
+void AppointmentQueue::getFront (Patient& item)
 {
 	item = frontNode->item;
 }
 
-<<<<<<< HEAD
-int AppointmentQueue::track(Patient& item)
-{
-	 //Version 1
-	if (!isEmpty()) {
-		int* ahead = 0;
-		Node* currentNode = frontNode;
-		
-		while (currentNode->next != NULL) {
-			if (currentNode->item.getName () == item.getName ())
-			{
-				break;
-			}
-			currentNode = currentNode->next;
-			ahead += 1;
-		}
-		return *ahead;
-		delete ahead;
-	}
-}
-=======
-//void track(Patient& item)
-//{
-//
-//}
->>>>>>> 2e34df841e493e2059748bf7eaff5eba2c45dd9f
 
-bool AppointmentQueue::isEmpty()
+bool AppointmentQueue::isEmpty ()
 {
 	return frontNode == NULL && backNode == NULL;
 }
 
-void AppointmentQueue::display()
+void AppointmentQueue::display ()
 {
 	Node* temp = frontNode;
 
-	if (!isEmpty())
+	if (!isEmpty ())
 	{
 		while (temp != NULL)
 		{
 			std::cout << std::endl;
-			std::cout << temp->item.getName() << std::endl;
-			std::cout << temp->item.getPhoneNo() << std::endl;
-			std::cout << temp->item.getNRIC() << std::endl;
-			std::cout << temp->item.getQueueNo() << std::endl;
+			std::cout << temp->item.getName () << std::endl;
+			std::cout << temp->item.getPhoneNo () << std::endl;
+			std::cout << temp->item.getNRIC () << std::endl;
+			std::cout << temp->item.getQueueNo () << std::endl;
 			temp = temp->next;
 		}
 	}

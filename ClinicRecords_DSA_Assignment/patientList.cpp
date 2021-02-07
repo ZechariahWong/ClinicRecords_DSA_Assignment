@@ -14,8 +14,6 @@ bool patientList::add(Patient item)
 	}
 	else
 	{
-		//patientNode *nextNode = new patientNode ();
-		//currentNode = firstNode;
 		patientNode* currentNode = firstNode;
 		while (currentNode->next != NULL)
 		{
@@ -68,20 +66,6 @@ bool patientList::remove(int index)
 	//size--;
 }
 
-//Patient patientList::get(int index)
-//{
-//	if (index <= size) {
-//		patientNode* currentNode = firstNode;
-//		for (int i = 0; i < index; i++) {
-//			currentNode = currentNode->next;
-//		}
-//		//cout << "Item retrieved: " << currentNode->item.getName () << endl;
-//		return currentNode->item;
-//	}
-//	else {
-//		cout << "Invalid index" << endl;
-//	}
-//}
 
 Patient* patientList::get(int index)
 {
@@ -90,7 +74,6 @@ Patient* patientList::get(int index)
 		for (int i = 0; i < index; i++) {
 			currentNode = currentNode->next;
 		}
-		//cout << "Item retrieved: " << currentNode->item.getName () << endl;
 		return &currentNode->item;
 	}
 	else {
@@ -116,5 +99,4 @@ void patientList::print()
 		cout << currentNode->item.getName() << endl;
 		currentNode = currentNode->next;
 	}
-	//cout << "end" << endl;
 }

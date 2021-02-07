@@ -23,7 +23,6 @@ public:
 	Patient* get(int index);
 
 	bool add(Patient item);
-	//bool add(int index, Medicine item);
 	bool remove(int index);
 	bool clear();
 	void print();

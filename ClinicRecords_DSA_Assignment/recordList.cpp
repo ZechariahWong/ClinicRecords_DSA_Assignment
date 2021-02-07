@@ -14,8 +14,6 @@ bool recordList::add(Record item)
 	}
 	else
 	{
-		//recNode *nextNode = new recNode ();
-		//currentNode = firstNode;
 		recNode* currentNode = firstNode;
 		while (currentNode->next != NULL)
 		{
@@ -35,8 +33,6 @@ bool recordList::add(int index, Record item)
 		newNode->item = item;
 		newNode->next = NULL;
 		cout << "Being added:" << newNode->item.getRecordID() << endl;
-		//cout << newNode->next << endl;
-		// Using a "firstNode" as it has to go through the entire recordList
 		recNode* currentNode = firstNode;
 		if (index == 0) {
 			newNode->next = currentNode;
@@ -114,14 +110,6 @@ Record recordList::get(int index)
 	}
 }
 
-//bool recordList::isEmpty ()
-//{
-//	if (size == 0)
-//		return true;
-//	else
-//		return false;
-//}
-
 void recordList::print()
 {
 	recNode* currentNode = firstNode;
@@ -135,5 +123,4 @@ void recordList::print()
 		currentNode = currentNode->next;
 	}
 	cout << "================" << endl;
-	//cout << "end" << endl;
 }

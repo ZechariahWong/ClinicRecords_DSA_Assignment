@@ -1,24 +1,23 @@
 #pragma once
 #include <string>
 #include <stdlib.h>
+#include <time.h>
 #include "patient.h"
 #include "recordList.h"
 #include "PatientDB_BST.h"
 #include "AppointmentQueue.h"
 
 
+Medicine panadol = Medicine ("Panadol", "For pain", 3.5);
+Medicine coughSyr = Medicine ("Cough Syrup", "For coughs", 0.9);
+Medicine Strepsils = Medicine ("Strepsils", "For sorethroats", 2.5);
 
-Medicine panadol = Medicine("Panadol", "For pain", 3.5);
-Medicine coughSyr = Medicine("Cough Syrup", "For coughs", 0.9);
-Medicine Strepsils = Medicine("Strepsils", "For sorethroats", 2.5);
+PatientDB_BST database = PatientDB_BST ();
+AppointmentQueue aQueue = AppointmentQueue ();
 
-PatientDB_BST database = PatientDB_BST();
-AppointmentQueue aQueue = AppointmentQueue();
+medicineList medicineCollection = medicineList ();
 
-medicineList medicineCollection = medicineList();
-
-// subject to required modifications
-void menuDisplay()
+void menuDisplay ()
 {
 	cout << "\nClinic Appointment System (v0.69)" << endl;
 	cout << "=================================" << endl;
@@ -31,7 +30,7 @@ void menuDisplay()
 	cout << "7) Exit" << endl;
 }
 
-void registerPatient()
+void registerPatient ()
 {
 	string name, number, ic;
 
@@ -47,8 +46,8 @@ void registerPatient()
 	cin >> ic;
 	cout << endl;
 
-	Patient patient = Patient(name, number, ic);
-	database.insert(patient);
+	Patient patient = Patient (name, number, ic);
+	database.insert (patient);
 	cout << "Patient successfully registered." << endl;
 	cout << endl;
 }
@@ -79,21 +78,21 @@ void enterMedicineDetails (medicineList medsGiven, float& subTotal) //helper fun
 	cin >> amt;
 	cout << endl;
 
-	float medAmt = atof(amt.c_str());
+	float medAmt = atof (amt.c_str ());
 	Medicine m = Medicine (medsName, medsDesc, medAmt);
 	subTotal += medAmt;
 	medsGiven.add (m);
 }
-void addApptInfo()
+void addApptInfo ()
 {
-	searchPatient();
+	searchPatient ();
 	int patientChoice;
 	cout << "Select result (1 being the topmost patient): ";
 	cin >> patientChoice;
-	Patient *patient = database.searchResults.get(patientChoice - 1);
+	Patient* patient = database.searchResults.get (patientChoice - 1);
 
 	string recordId, notes;
-	medicineList medsGiven = medicineList();
+	medicineList medsGiven = medicineList ();
 	float subTotal = 0;
 
 	cout << "Enter Appointment ID: " << endl;
@@ -104,7 +103,7 @@ void addApptInfo()
 	cin >> notes;
 	cout << endl;
 
-	enterMedicineDetails(medsGiven, subTotal);
+	enterMedicineDetails (medsGiven, subTotal);
 	string repeat_choice = "Y";
 
 	while (repeat_choice == "Y")
@@ -113,54 +112,53 @@ void addApptInfo()
 		cin >> repeat_choice;
 		if (repeat_choice == "Y")
 		{
-			enterMedicineDetails(medsGiven, subTotal);
+			enterMedicineDetails (medsGiven, subTotal);
 		}
 	}
 
-	Record r = Record(recordId, notes, medsGiven, subTotal);
-	patient->addRecord(r);
+	Record r = Record (recordId, notes, medsGiven, subTotal);
+	patient->addRecord (r);
 
 	cout << "Record successfully added to patient data." << endl;
 }
 
-void issueQueueNo()
+void issueQueueNo ()
 {
-	searchPatient();
+	searchPatient ();
 	int patientChoice;
 	cout << "Select result (1 being the topmost patient): ";
 	cin >> patientChoice;
-	Patient *patient = database.searchResults.get(patientChoice - 1); // points to patient in search result
-	Patient *patientContext = &database.search(*patient)->item; // point to address of patient retrieved from database search
-	cout << "\n" << patientContext->getName() << " selected." << endl; // for debugging
+	Patient* patient = database.searchResults.get (patientChoice - 1); // points to patient in search result
+	Patient* patientContext = &database.search (*patient)->item; // point to address of patient retrieved from database search
+	cout << "\n" << patientContext->getName () << " selected." << endl; // for debugging
 
-	patientContext->setQueueNo(rand() % 9999); // patient in DB changes queue no
-	aQueue.enqueue(patientContext);
+	patientContext->setQueueNo (rand () % 9999); // patient in DB changes queue no
+	aQueue.enqueue (patientContext);
 }
 
-
-void viewAllPatients()
+void viewAllPatients ()
 {
 	// debug database print
 	cout << "===DATABASE===" << endl;
-	database.display();
+	database.display ();
 
 	// debug queue print
 	cout << "===QUEUE===" << endl;
-	aQueue.display();
-	
+	aQueue.display ();
+
 	cout << endl;
 }
 
-void callNextQueueNumber()
+void callNextQueueNumber ()
 {
 	Patient p;
-	if (!aQueue.dequeue(p))
+	if (!aQueue.dequeue (p))
 		cout << "Queue is empty." << endl;
 	else
-		cout << "Calling out to: " << p.getName() << ", with queue number " << p.getQueueNo() << endl;
+		cout << "Calling out to: " << p.getName () << ", with queue number " << p.getQueueNo () << endl;
 }
 
-void menuChoice()
+void menuChoice ()
 {
 	int choice = 0;
 	while (choice != 6)
@@ -170,77 +168,52 @@ void menuChoice()
 		switch (choice)
 		{
 		case 1:
-			registerPatient();
+			registerPatient ();
 			break;
 
 		case 2:
-			addApptInfo();
+			addApptInfo ();
 			break;
 
 		case 3:
-			issueQueueNo();
+			issueQueueNo ();
 			break;
 
 		case 4:
-			viewAllPatients();
+			viewAllPatients ();
 			break;
 
 		case 5:
-			searchPatient();
+			searchPatient ();
 			break;
 
 		case 6:
-			callNextQueueNumber();
+			callNextQueueNumber ();
 			break;
 
 		case 7:
-			return;
+			break;
 
 		default:
 			cout << "Invalid choice, please select a valid choice." << endl;
 			break;
 		}
-		menuDisplay();
+		menuDisplay ();
 	}
 }
 
-int main() {
-	// Seeding at the very start
+int main () {
 	srand (time (NULL));
 	Patient zech = Patient ("zech", "123", "001");
 	Patient kelvin = Patient ("kelvin", "321", "002");
 	Patient patient = Patient ("patient", "321213", "003");
 	Patient patient2 = Patient ("patient2", "54321", "004");
-	database.insert(zech);
-	database.insert(kelvin);
+	database.insert (zech);
+	database.insert (kelvin);
 	database.insert (patient);
 	database.insert (patient2);
 
-	//medicineCollection.add(panadol);
-	//medicineCollection.add(coughSyr);
-	//medicineCollection.add(Strepsils);
-	//Record myRec = Record("1", "Patient is alive and well", medicineCollection);
-	////medicineCollection->print();
-
-	//zech.addRecord(myRec);
-	//zech.getRecordList().print();
-	////zech.getRecordList()->get(1).getMedsGiven().get(1).getName();
-
-	//cout << endl;
-	//Record r = zech.getRecordList().get(0);
-	//medicineList ml = r.getMedsGiven();
-	//int test = ml.getLength();
-	//Medicine m = ml.get(0); //code breaks here
-
-	//cout << "Medicine list index 1: " << zech.getRecordList().get(0).getMedsGiven().get(1).getName() << endl; //works now
-	//cout << endl;
-	//cout << medicineCollection.isEmpty();
-	//medicineCollection.remove(1);
-	//cout << endl;
-	//medicineCollection.print();
-	//cout << medicineCollection.getLength() << endl;
-	//mainStack->displayInOrder ();
-	menuDisplay();
-	menuChoice();
+	menuDisplay ();
+	menuChoice ();
 	return 0;
 }

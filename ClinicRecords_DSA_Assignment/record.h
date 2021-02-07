@@ -19,10 +19,8 @@ public:
 
 
 	// Setters
-	//void setRecordID (string id) ;
 	void setDoctorNotes (string note) ;
 	void calcBill ();						// Calculates the cost of all the meds
-	//// setAmtPayable maybe irrelevant? 
 
 	void print ();
 };

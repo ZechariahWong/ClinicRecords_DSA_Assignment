@@ -4,7 +4,6 @@ Record::Record () {};
 Record::Record (string id, string note, medicineList meds, float total) {
 	recordID = id;
 	doctorNotes = note;
-	//amtPayable = getAmtPayable ();
 	medsGiven = meds;
 	amtPayable = total;
 };

@@ -6,7 +6,6 @@
 
 using namespace std;
 
-// fix template on another day maybe?
 //template <typename Node>
 void balanceTree(PatientBinaryNode*& t);
 
