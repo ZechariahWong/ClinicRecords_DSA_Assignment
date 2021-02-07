@@ -19,29 +19,28 @@ AppointmentQueue::~AppointmentQueue()
 	backNode = NULL;
 }
 
-bool AppointmentQueue::enqueue(Patient item)
+bool AppointmentQueue::enqueue (Patient* item)
 {
-	
-	Node* newNode = new Node();
-	newNode->item = item;
+
+	Node* newNode = new Node ();
+	newNode->item = *item;
+	newNode->item.setQueueNo (item->getQueueNo ());
 	newNode->next = NULL;
 
-	Node* currentNode = NULL;
-	currentNode = frontNode;
-
-	if (isEmpty())
+	if (isEmpty ())
 	{
 		cout << "Empty queue creating a new one..." << endl;
-		srand (time (NULL));
 		frontNode = newNode;
 	}
 	else
 	{
+		Node* currentNode = NULL;
+		currentNode = frontNode;
 		// First checking to see if patient is already in the appointment queue
 		// This is here to catch a duplicate in the case that there is no next pointer
 		// It is an edge case for the first record and then trying to have the patient
 		// add another record
-		if (currentNode->item.getName () == newNode->item.getName () || backNode->item.getName () == newNode->item.getName())
+		if (currentNode->item.getName () == newNode->item.getName () || backNode->item.getName () == newNode->item.getName ())
 		{
 			cout << "This patient already has an issued queue number!\n";
 			return false;
@@ -51,18 +50,22 @@ bool AppointmentQueue::enqueue(Patient item)
 				// If any point in time a duplicate name is found it will exit the method
 				if (currentNode->item.getName () == newNode->item.getName ())
 				{
-					cout << currentNode->item.getName()<<" already has an issued queue number! " << newNode->item.getQueueNo() << "\n";
-					currentNode = backNode;						// Setting current to the last node so it exits
+					cout << currentNode->item.getName () << " already has an issued queue number! " << newNode->item.getQueueNo () << "\n";
+					// Setting current to the last node so it exits
+					currentNode = backNode;
 					return false;
 				}
-				// If there is a dupe Q number it will set a new rand number and reset the loop
+				// This checks to make sure there are no duplicate queue numbers, 
+				// if there is a dupe it will set a new rand number and reset the loop
 				else if (newNode->item.getQueueNo () == currentNode->item.getQueueNo ())
 				{
-					newNode->item.setQueueNo (rand()%9999);
-					cout << "Duplicate queue number found reassigning... "<< newNode->item.getQueueNo() << " \n";
+					newNode->item.setQueueNo (rand () % 9999);
+					item->setQueueNo (newNode->item.getQueueNo ());
+					cout << "Duplicate queue number found reassigning... " << newNode->item.getQueueNo () << " \n";
 					currentNode = frontNode;
 				}
 				else {
+					// If none of the above is true it will continue the loop as normal
 					currentNode = currentNode->next;
 				}
 			}
@@ -75,35 +78,11 @@ bool AppointmentQueue::enqueue(Patient item)
 				currentNode = frontNode;
 			}
 		}
+		// Freeing up memory...
+		currentNode = NULL;
+		delete currentNode;
 		backNode->next = newNode;
 	}
-	// Freeing up memory...
-	currentNode = NULL;
-	delete currentNode;
-	// If a duplicate is not found it will set the backNodes next to point to the new node
-	cout << "No record found! Adding an appointment for " << newNode->item.getName () << endl;
-	backNode = newNode;
-	return true;
-}
-
-//bool AppointmentQueue::enqueue(Patient* item)
-//{
-//	Node* newNode = new Node();
-//	newNode->item = *item;
-//	newNode->next = NULL;
-//
-//	if (isEmpty())
-//	{
-//		frontNode = newNode;
-//	}
-//	else
-//	{
-//		backNode->next = newNode;
-//	}
-//
-//	backNode = newNode;
-//	return true;
-//}
 
 bool AppointmentQueue::dequeue()
 {
@@ -158,6 +137,7 @@ void AppointmentQueue::getFront(Patient& item)
 	item = frontNode->item;
 }
 
+<<<<<<< HEAD
 int AppointmentQueue::track(Patient& item)
 {
 	 //Version 1
@@ -177,6 +157,12 @@ int AppointmentQueue::track(Patient& item)
 		delete ahead;
 	}
 }
+=======
+//void track(Patient& item)
+//{
+//
+//}
+>>>>>>> 2e34df841e493e2059748bf7eaff5eba2c45dd9f
 
 bool AppointmentQueue::isEmpty()
 {

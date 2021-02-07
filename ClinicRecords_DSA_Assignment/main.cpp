@@ -129,10 +129,12 @@ void issueQueueNo()
 	int patientChoice;
 	cout << "Select result (1 being the topmost patient): ";
 	cin >> patientChoice;
-	Patient *patient = database.searchResults.get(patientChoice - 1);
-	cout << "\n" << patient->getName() << " selected." << endl; // for debugging
-	aQueue.enqueue(*patient);
-	database.update(patient);
+	Patient *patient = database.searchResults.get(patientChoice - 1); // points to patient in search result
+	Patient *patientContext = &database.search(*patient)->item; // point to address of patient retrieved from database search
+	cout << "\n" << patientContext->getName() << " selected." << endl; // for debugging
+
+	patientContext->setQueueNo(rand() % 9999); // patient in DB changes queue no
+	aQueue.enqueue(patientContext);
 }
 
 
